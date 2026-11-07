@@ -4,17 +4,15 @@
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: 600px;
+  right: var(--right-panel-width);
   left: 65px;
-  height: 139px;
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  flex-shrink: 0;
+  height: 170px;
+  padding: 25px 20px 10px;
+  z-index: 100;
 }
 
 .whatsapp {
-  color: rgb(29, 170, 97);
+  color: var(--whatsapp-green);
   font-weight: 500;
   font-size: 23px;
 }
@@ -27,20 +25,18 @@
 
 .row1 {
   justify-content: space-between;
-  padding-right: 20px;
+  align-items: center;
+  padding-right: 4px;
   margin-bottom: 12px;
 }
 
 .row-icons-container {
   width: 70px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .new-chat-menu-container {
-
   margin-right: 14px;
   width: 35px;
   height: 35px;
@@ -50,21 +46,18 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-
 }
 
-.new-chat-menu-container:hover {
-  background-color: rgb(247, 246, 246);
-}
+.new-chat-menu-container:hover { background-color: rgb(247, 246, 246); }
 
 .new-chat-icon,
 .menu-icon {
   margin-right: 1.5px;
   width: 24px;
   height: 24px;
-
 }
-.new-chat-menu-tooltip{
+
+.new-chat-menu-tooltip {
   background-color: black;
   color: white;
   pointer-events: none;
@@ -78,64 +71,45 @@
   opacity: 0;
   transition: opacity 0.15s;
 }
-.new-chat-menu-container:hover .new-chat-menu-tooltip{
-  opacity: 1;
 
-}
+.new-chat-menu-container:hover .new-chat-menu-tooltip { opacity: 1; }
 
 .row2 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  min-width: 0;
 }
 
 .search-bar {
   font-size: 16px;
-  border-style: solid;
-  padding-left: 46px;
   border: none;
+  padding: 0 14px 0 46px;
   height: 41px;
+  min-width: 0;
   flex: 1;
   background-color: rgb(247, 246, 246);
   border-radius: 22px;
 }
 
-.search-bar::placeholder {
-  font-size: 15px;
-}
-
-.search-bar:hover {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(223, 220, 220);
-
-}
-
-.search-bar:focus {
-  outline: 0;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgb(29, 170, 97);
-  font-size: 18px;
-}
-
-.row2 button:hover {
-  border: none;
-  cursor: default;
-}
+.search-bar::placeholder { font-size: 15px; }
+.search-bar:hover { outline: 1px solid rgb(223, 220, 220); }
+.search-bar:focus { outline: 2px solid var(--whatsapp-green); }
 
 .row2 button {
   overflow: hidden;
   width: 40px;
   height: 39px;
+  flex: 0 0 40px;
   border: none;
   background-color: rgb(247, 246, 246);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 20px 0 0 20px;
   margin-right: -45px;
   padding-left: 5px;
   z-index: 3;
 }
+
+.row2 button:hover { cursor: pointer; }
 
 .search-button {
   width: 20px;
@@ -147,32 +121,34 @@
 
 .row3 {
   display: flex;
-  margin-bottom: 10px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.row3::-webkit-scrollbar { display: none; }
 
 .row3-icon,
 .row3-icon-all,
 .row3-icon-plus {
+  flex: 0 0 auto;
   font-size: 14px;
   font-weight: 500;
   color: rgb(107, 107, 107);
-  margin-right: 8px;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid rgb(219, 219, 219);
   padding: 7px 10px;
   border-radius: 17px;
   cursor: pointer;
-  border-color: rgb(219, 219, 219);
   transition: background-color 0.15s;
+  white-space: nowrap;
+}
 
-}
 .row3-icon:hover,
-.row3-icon-plus:hover{
-  background-color: rgb(240, 240, 240);
-}
-.row3-icon-all:hover{
-  background-color:  rgb(214, 255, 234);;
-}
+.row3-icon-plus:hover { background-color: rgb(240, 240, 240); }
+.row3-icon-all:hover { background-color: rgb(214, 255, 234); }
 
 .row3-icon-all {
   color: rgb(23, 138, 79);
@@ -180,13 +156,28 @@
   background-color: rgb(235, 255, 244);
 }
 
-.row3-icon-plus {
-  width: 22px;
-  padding: 0 4px;
+.row3-icon-plus { width: 30px; padding: 0 4px; }
+.plus-sign { font-size: 25px; font-weight: 400; margin-left: 3px; }
+
+@media (max-width: 1100px) {
+  .header { right: 0; }
 }
 
-.plus-sign {
-  font-size: 25px;
-  font-weight: 400;
-  margin-left: 3px;
+@media (max-width: 640px) {
+  .header {
+    left: 0;
+    right: 0;
+    height: 158px;
+    padding: 16px 14px 8px;
+  }
+  .whatsapp { font-size: 22px; }
+  .row1 { margin-bottom: 8px; }
+  .row2 { margin-bottom: 8px; }
+  .search-bar { font-size: 14px; }
+  .search-bar::placeholder { font-size: 13px; }
+  .row3 { gap: 6px; }
+  .row3-icon,
+  .row3-icon-all,
+  .row3-icon-plus { font-size: 12px; padding: 6px 9px; }
+  .row3-icon-plus { width: 28px; padding: 0 4px; }
 }
