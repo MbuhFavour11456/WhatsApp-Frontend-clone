@@ -214,8 +214,10 @@
     left: 0;
     width: 100%;
     height: 60px;
-    padding: 5px;
+    box-sizing: border-box;
+    padding: 5px 10px;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
     background-color: rgb(240, 240, 240);
   }
@@ -224,11 +226,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
   }
 
   .sidebar-icons-container {
+    justify-content: center;
     margin: 0;
+  }
+
+  .sidebar-chat-icon,
+  .sidebar-icon,
+  .sidebar-community-icon {
+    width: 26px;
+    margin: 0;
+    transform: none;
+    filter: none;
   }
 
   .lower-sidebar {
