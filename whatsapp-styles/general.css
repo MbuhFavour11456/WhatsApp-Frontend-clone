@@ -1,6 +1,20 @@
-body{
+body {
   font-family: Roboto, Arial;
   padding-left: 67px;
   padding-top: 170px;
   padding-right: 600px;
+}
+
+@media (max-width: 1100px) {
+  body {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-left: 0;
+    padding-top: 158px;
+    padding-bottom: 70px;
+  }
 }

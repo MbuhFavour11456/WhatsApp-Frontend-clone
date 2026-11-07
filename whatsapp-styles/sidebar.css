@@ -87,7 +87,6 @@
   position: absolute;
   right: -10px;
   top: -10px;
-
 }
 
 .sidebar-media-icon {
@@ -124,7 +123,6 @@
   opacity: 0;
   transition: opacity 0.15s;
   pointer-events: none;
-
 }
 
 .sidebar-icons-container:hover .tooltip,
@@ -139,7 +137,6 @@
   align-items: center;
   position: relative;
   padding-right: 4px;
-
 }
 
 .profile-tooltip {
@@ -157,7 +154,6 @@
   pointer-events: none;
 }
 
-
 .sidebar2 {
   display: flex;
   position: fixed;
@@ -168,7 +164,6 @@
   background-color: rgb(240, 240, 240);
   justify-content: center;
   align-items: center;
-  flex-shrink: 100;
 }
 
 .send-document-container,
@@ -184,7 +179,6 @@
   border-radius: 13px;
   overflow: hidden;
   transition: background-color 0.15s;
-
 }
 
 .send-document-container:hover,
@@ -205,4 +199,62 @@
   color: rgb(99, 97, 97);
   margin-top: 13px;
   margin-left: 19px;
+}
+
+@media (max-width: 1100px) {
+  .sidebar2 {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(240, 240, 240);
+  }
+
+  .upper-sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sidebar-icons-container {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .sidebar-chat-icon,
+  .sidebar-icon,
+  .sidebar-community-icon {
+    width: 26px;
+    margin: 0;
+    transform: none;
+    filter: none;
+  }
+
+  .lower-sidebar {
+    display: none;
+  }
+
+  .tooltip,
+  .profile-tooltip {
+    display: none;
+  }
+
+  .notifications {
+    right: -5px;
+    top: -5px;
+  }
 }
