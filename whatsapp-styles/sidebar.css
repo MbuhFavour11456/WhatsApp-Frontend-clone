@@ -10,12 +10,18 @@
   background-color: rgb(240, 240, 240);
   padding-top: 25px;
   padding-bottom: 18px;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 200;
 }
 
-.upper-sidebar {
+ .upper-sidebar {
   flex-shrink: 0;
+}
+
+.lower-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .account-profile {
@@ -97,7 +103,7 @@
 }
 
 .media-icons-container {
-  margin-top: 270px;
+  margin-top: 0;
   position: relative;
   margin-bottom: 20px;
 }
@@ -207,7 +213,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 640px) {
   .sidebar {
     top: auto;
     bottom: 0;
